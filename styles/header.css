@@ -172,5 +172,11 @@ display: none;
     .container__texto{
         display: block;
     }
+    .lista-menu{
+        /* position: absolute; */
+         left: 10.5%; 
+        /* top: 100%; */
+        width:auto;
+    }
 
 }
