@@ -95,3 +95,21 @@ handleMediaQueryChange();
 mediaQueryTablet.addEventListener("change", handleMediaQueryChange);
 mediaQueryMobile.addEventListener("change", handleMediaQueryChange);
 mediaQueryDesktop.addEventListener("change", handleMediaQueryChange);
+
+function updatePosition() {
+    var element1 = document.getElementById('element1');
+    var element2 = document.getElementById('element2');
+  
+    var rect = element1.getBoundingClientRect();
+    var top = rect.bottom; /* Use rect.bottom to position element2 below element1 */
+    var left = rect.left;
+  
+    element2.style.top = top + 'px';
+    element2.style.left = left + 'px';
+  }
+  
+  // Call the updatePosition function initially and whenever the window is resized
+  updatePosition();
+  window.addEventListener('resize', updatePosition);
+  
+    window.addEventListener('resize', updatePosition);
