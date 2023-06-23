@@ -1,0 +1,97 @@
+function handleTabletMediaQuery(mediaQueryTablet) {
+    if (mediaQueryTablet.matches) {
+        const swiper = new Swiper('.swiper', {
+            spaceBetween: 0,
+            slidesPerView: 3,
+            centeredSlides: false,
+            loop: false,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
+        });
+    }
+}
+
+function handleMobileMediaQuery(mediaQueryMobile) {
+    if (mediaQueryMobile.matches) {
+        const swiper = new Swiper('.swiper', {
+            spaceBetween: 50,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            loop: false,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
+        });
+    }
+}
+
+function handleDesktopMediaQuery(mediaQueryDesktop) {
+    if (mediaQueryDesktop.matches) {
+        const swiper = new Swiper('.swiper', {
+            spaceBetween: 50,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            loop: false,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
+        });
+    }
+}
+
+const mediaQueryTablet = window.matchMedia("(min-width: 1024px)");
+const mediaQueryDesktop = window.matchMedia("(min-width: 1728px)");
+const mediaQueryMobile = window.matchMedia("(min-width: 428px)");
+
+let swiper = null; // Declare a variable to hold the Swiper instance
+
+function handleMediaQueryChange() {
+    if (swiper !== null) {
+        swiper.destroy(); // Destroy the existing Swiper instance
+    }
+
+    if (mediaQueryTablet.matches) {
+        swiper = new Swiper('.swiper', {
+            spaceBetween: 0,
+            slidesPerView: 3,
+            centeredSlides: false,
+            loop: false,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
+        });
+    } else if (mediaQueryMobile.matches) {
+        swiper = new Swiper('.swiper', {
+            spaceBetween: 50,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            loop: false,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
+        });
+    } else if (mediaQueryDesktop.matches) {
+        swiper = new Swiper('.swiper', {
+            spaceBetween: 50,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            loop: false,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
+        });
+    }
+}
+
+handleMediaQueryChange();
+
+mediaQueryTablet.addEventListener("change", handleMediaQueryChange);
+mediaQueryMobile.addEventListener("change", handleMediaQueryChange);
+mediaQueryDesktop.addEventListener("change", handleMediaQueryChange);
