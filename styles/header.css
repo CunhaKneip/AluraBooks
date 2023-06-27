@@ -131,7 +131,7 @@ display: none;
     .opcoes__botao:checked ~ .lista-menu{
         display:block;
         width: auto;
-        left:50%;
+        /* left:50%; */
     }
    
 
