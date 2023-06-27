@@ -45,7 +45,7 @@ function handleDesktopMediaQuery(mediaQueryDesktop) {
 
 const mediaQueryTablet = window.matchMedia("(min-width: 1024px)");
 const mediaQueryDesktop = window.matchMedia("(min-width: 1728px)");
-const mediaQueryMobile = window.matchMedia("(max-width: 1727px)");
+const mediaQueryMobile = window.matchMedia("(max-width: 767px )");
 
 let swiper = null; // Declare a variable to hold the Swiper instance
 
