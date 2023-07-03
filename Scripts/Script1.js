@@ -1,4 +1,11 @@
 
+// Declara as variaveis as quais serao atribuidos os valores das funções window.matchMedia.Essa função retorna um valor booleano dependendo se as especificações colocadas dentro dos () são atendidas
+ 
+
+const mediaQueryTablet = window.matchMedia("(min-width: 1024px)");
+const mediaQueryDesktop = window.matchMedia("(min-width: 1728px)");
+const mediaQueryMobile = window.matchMedia("(max-width: 767px )");
+
 
 //Declara uma variavel para comprovar a existencia ou nao do SWIPER
 let swiper = null; 
