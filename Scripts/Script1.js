@@ -1,6 +1,6 @@
 
 // Declara as variaveis as quais serao atribuidos os valores das funções window.matchMedia.Essa função retorna um valor booleano dependendo se as especificações colocadas dentro dos () são atendidas
- 
+
 
 const mediaQueryTablet = window.matchMedia("(min-width: 1024px)");
 const mediaQueryDesktop = window.matchMedia("(min-width: 1728px)");
@@ -13,9 +13,9 @@ let swiper = null;
 
 //Quando chamada, essa função destroi o SWIPER caso ele já exista e cria outro atendendo as especificações para cada dispositivo
 function handleMediaQueryChange() {
-    if (swiper !== null) {
-        swiper.destroy(); 
-    }
+    // if (swiper !== null) {
+    //     swiper.destroy(); 
+    // }
 
     if (mediaQueryTablet.matches) {
         swiper = new Swiper('.swiper', {
